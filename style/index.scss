@@ -1,0 +1,123 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  p,a{
+    font-family:'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
+  }
+  h3{
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+    font-size:1.4rem;
+    font-weight:normal;
+  }
+  nav{
+    margin:2% 4% 0;
+    #mainTitle{
+      margin:16vh 0;
+      >h1{
+        font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", "Sawarabi Mincho", serif;
+        font-size: 200px;
+        text-align: center;
+      }
+      >h2{
+        margin-top:8vh;
+        text-align: center;
+        font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", "Sawarabi Mincho", serif;
+        font-size: 50px;
+      }
+      >h3{
+        margin-top:16vh;
+        text-align: center;
+        font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", "Sawarabi Mincho", serif;
+        font-size:40px;
+      }
+    }
+    #listOfPan{
+      margin-top:2vh;
+      display: inline-block;
+      >a{
+      }
+      >p{
+        display: inline;
+      }
+    }
+  }
+  #modalWindow{
+    background-color: rgba(0,0,0,0.8);
+    visibility: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position:fixed;
+    z-index: 100;
+    width:100%;
+    height:100%;
+    >figure{
+      >img{
+        width:100%;
+        height:100%;
+        -o-object-fit: contain;
+        object-fit: contain;
+      }
+    }
+  }
+  main{
+    margin:8% 0;
+    >ul{
+      margin:0 4%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      >li{
+        margin:calc((100% / 3 * 0.1 )/3);
+        // &:hover{
+        //   cursor: pointer;
+        //   figure{
+        //     opacity:0.8;
+        //   }
+        // }
+        &:nth-child(3n+1){
+          margin-left:0;
+        }
+        &:nth-child(3n+2){
+          margin-right: 0;
+        }
+        &:nth-child(-n+3){
+          margin-top:0;
+        }
+        list-style-type: none;
+        width:calc(100% / 3 * 0.9);
+        >section{
+          height:calc(100vh / 2.5);
+          >figure{
+            width:100%;
+            height:85%;
+            >img{
+              width:100%;
+              height: 100%;
+              -o-object-fit: cover;
+              object-fit: cover;
+            }
+          }
+          >h3{
+            height:10%;
+            margin-top:2%;
+            text-align:center;
+          }
+        }
+      }
+    }
+  }
+  footer{
+    margin-bottom: 4vh;
+    >p{
+      text-align: center;
+    }
+  }
+}
