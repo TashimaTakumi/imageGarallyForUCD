@@ -12,7 +12,9 @@ body{
     font-weight:normal;
   }
   nav{
+    position:relative;
     margin:2% 4% 0;
+    z-index:0;
     #mainTitle{
       margin:16vh 0;
       >h1{
@@ -44,16 +46,24 @@ body{
     }
   }
   #modalWindow{
-    background-color: rgba(0,0,0,0.8);
+    //background-color: white;
     visibility: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     position:fixed;
     z-index: 100;
-    width:100%;
-    height:100%;
+    width:80%;
+    height:95%;
+    top:0;bottom:0;left:0;right:0;
+    margin: auto;
+    border:solid 4px white;
+    opacity: 0;
+    -webkit-transition:opacity 0.3s;
+    transition:opacity 0.3s;
     >figure{
+      width:100%;
+      height:100%;
       >img{
         width:100%;
         height:100%;
@@ -61,8 +71,51 @@ body{
         object-fit: contain;
       }
     }
+
+  }
+  #blackWindow{
+    position:fixed;
+    visibility: hidden;
+    z-index:99;
+    width:100%;
+    height:100%;
+    top:0;
+    background-color: black;
+    button{
+      width:40px;
+      height: 40px;
+      border-radius: 50%;
+      opacity:0.4;
+      cursor: pointer;
+      &:hover{
+        opacity:0.8;
+      }
+    }
+    #cancelButton{
+      margin:2.5% 5%;
+    }
+    #goToNextModalWindow{
+      right:5%;
+      background-color: white;
+      position:absolute;
+      top:0;bottom:0;
+      margin:auto;
+      -webkit-transform:scale(1.4);
+              transform:scale(1.4);
+    }
+    #goToBeforeModalWindow{
+      left:5%;
+      background-color: white;
+      position:absolute;
+      top:0;bottom:0;
+      margin:auto;
+      -webkit-transform:scale(1.4);
+              transform:scale(1.4);
+    }
   }
   main{
+    position: relative;
+    z-index: 0;
     margin:8% 0;
     >ul{
       margin:0 4%;
@@ -76,12 +129,12 @@ body{
       flex-wrap: wrap;
       >li{
         margin:calc((100% / 3 * 0.1 )/3);
-        // &:hover{
-        //   cursor: pointer;
-        //   figure{
-        //     opacity:0.8;
-        //   }
-        // }
+        &:hover{
+          cursor: pointer;
+          figure{
+            opacity:0.8;
+          }
+        }
         &:nth-child(3n+1){
           margin-left:0;
         }
